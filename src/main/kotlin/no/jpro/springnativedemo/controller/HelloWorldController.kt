@@ -1,13 +1,14 @@
 package no.jpro.springnativedemo.controller
 
-import org.springframework.web.bind.annotation.GetMapping
+import no.jpro.springnativedemo.model.Person
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class HelloWorldController {
 
-    @GetMapping("/hello")
-    fun sayHello(): String {
-        return "Hello World!"
+    @RequestMapping("/hello")
+    fun sayHello(person: Person): String {
+        return "Hello ${person.name}!"
     }
 }
