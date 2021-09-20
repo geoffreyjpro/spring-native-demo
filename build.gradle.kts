@@ -6,11 +6,11 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.5.21"
 	kotlin("plugin.spring") version "1.5.21"
-//	id("org.springframework.experimental.aot") version "0.10.3"
+	id("org.springframework.experimental.aot") version "0.10.3"
 }
 
 group = "no.jpro"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.2"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -38,7 +38,7 @@ tasks.withType<Test> {
 	useJUnitPlatform()
 }
 
-//tasks.withType<BootBuildImage> {
-//	builder = "paketobuildpacks/builder:tiny"
-//	environment = mapOf("BP_NATIVE_IMAGE" to "true")
-//}
+tasks.withType<BootBuildImage> {
+	builder = "paketobuildpacks/builder:tiny"
+	environment = mapOf("BP_NATIVE_IMAGE" to "true")
+}
