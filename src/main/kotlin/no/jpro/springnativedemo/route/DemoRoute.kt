@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component
 
 @Component
 class DemoRoute: RouteBuilder() {
-    val inFolder: String = "/Users/georekie/git/spring-native-demo/src/test/resources/in"
-    val backupFolder: String = "/Users/georekie/git/spring-native-demo/src/test/resources/out"
+    val inFolder: String = "/Users/geoffrey/git/spring-native-demo/src/test/resources/in"
+    val backupFolder: String = "/Users/geoffrey/git/spring-native-demo/src/test/resources/out"
     override fun configure() {
         from("file://$inFolder?move=$backupFolder&readLock=changed&readLockMinAge=3s")
             .routeId("Demo Route")
